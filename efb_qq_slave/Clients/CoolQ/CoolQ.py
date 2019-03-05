@@ -162,7 +162,7 @@ class CoolQ(BaseClient):
 
                 send_message_wrapper(efb_msg)
 
-        @self.coolq_bot.on_notice('group_increase')
+        # @self.coolq_bot.on_notice('group_increase')
         def handle_group_increase_msg(context):
             context['event_description'] = self._('\u2139 Group Member Increase Event')
             if (context['sub_type']) == 'invite':
@@ -181,7 +181,7 @@ class CoolQ(BaseClient):
             context['message'] = text
             self.send_efb_group_notice(context)
 
-        @self.coolq_bot.on_notice('group_decrease')
+        # @self.coolq_bot.on_notice('group_decrease')
         def handle_group_decrease_msg(context):
             context['event_description'] = self._("\u2139 Group Member Decrease Event")
             original_group = self.get_group_info(context['group_id'], False)
