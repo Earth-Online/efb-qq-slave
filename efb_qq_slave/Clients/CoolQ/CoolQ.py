@@ -580,7 +580,7 @@ class CoolQ(BaseClient):
         self.logger.debug('Update friend list completed. Entries: %s', len(self.friend_list))
 
     def update_group_list(self):
-        self.group_list = self.coolq_api_query('get_group_list')
+        self.group_list = self.coolq_api_query('get_group_list') or []
         self.logger.debug('Update group list completed. Entries: %s', len(self.group_list))
 
     def update_contacts_periodically(self, t_event):
