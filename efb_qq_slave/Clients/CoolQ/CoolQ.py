@@ -576,7 +576,7 @@ class CoolQ(BaseClient):
 
     def update_friend_list(self):
         # Warning: Experimental API
-        self.friend_list = self.coolq_api_query('_get_friend_list')
+        self.friend_list = self.coolq_api_query('_get_friend_list') or []
         self.logger.debug('Update friend list completed. Entries: %s', len(self.friend_list))
 
     def update_group_list(self):
